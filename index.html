@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Torneo de Pádel - Configuración</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <div class="pantalla" id="pantalla-configuracion">
+    <h1>Configuración Inicial</h1>
+    
+    <label for="cantidadCanchas">Cantidad de canchas:</label>
+    <input type="number" id="cantidadCanchas" min="1" />
+
+    <h2>Horarios disponibles por día</h2>
+    <div id="contenedor-dias">
+      <!-- Se llenará dinámicamente -->
+    </div>
+
+    <button onclick="guardarConfiguracion()">Guardar y Continuar</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
