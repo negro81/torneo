@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.pantalla {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+h1, h2 {
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select {
+  margin: 5px 0 15px 0;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.rango-horario {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #008cba;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005f73;
+}
