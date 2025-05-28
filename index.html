@@ -3,24 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Torneo de Pádel - Configuración</title>
+  <title>Torneo de Pádel</title>
   <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-  <div class="pantalla" id="pantalla-configuracion">
-    <h1>Configuración Inicial</h1>
-    
-    <label for="cantidadCanchas">Cantidad de canchas:</label>
-    <input type="number" id="cantidadCanchas" min="1" />
+  <div id="app">
 
-    <h2>Horarios disponibles por día</h2>
-    <div id="contenedor-dias">
-      <!-- Se llenará dinámicamente -->
-    </div>
+    <!-- Pantalla 1: Configuración inicial -->
+    <section id="pantalla-config">
+      <h1>Configuración del Torneo</h1>
+      <label>Cantidad de canchas: <input type="number" id="cant-canchas" min="1" /></label>
+      <h3>Horarios disponibles (por día y rango):</h3>
+      <div id="contenedor-horarios"></div>
+      <button onclick="agregarHorario()">Agregar rango horario</button>
+      <br><br>
+      <button onclick="irAPantalla('pantalla-parejas')">Siguiente</button>
+    </section>
 
-    <button onclick="guardarConfiguracion()">Guardar y Continuar</button>
+    <!-- Pantalla 2: Carga de parejas -->
+    <section id="pantalla-parejas" class="oculto">
+      <h1>Registro de Parejas</h1>
+      <form id="form-pareja">
+        <input type="text" placeholder="Apellido Jugador 1" required />
+        <input type="text" placeholder="Apellido Jugador 2" required />
+        <h3>Horarios en que NO pueden jugar:</h3>
+        <div id="horarios-no-pueden"></div>
+        <button type="button" onclick="agregarRestriccion()">Agregar restricción</button><br><br>
+        <button type="submit">Registrar pareja</button>
+      </form>
+      <ul id="lista-parejas"></ul>
+      <br>
+      <button onclick="irAPantalla('pantalla-config')">Atrás</button>
+      <button onclick="generarZonas()">Siguiente</button>
+    </section>
+
+    <!-- Pantalla 3: Zonas y programación -->
+    <section id="pantalla-zonas" class="oculto">
+      <h1>Zonas y Partidos Programados</h1>
+      <div id="zonas-generadas"></div>
+      <br>
+      <button onclick="irAPantalla('pantalla-parejas')">Atrás</button>
+      <button onclick="irAPantalla('pantalla-llaves')">Ir a Llaves Finales</button>
+    </section>
+
+    <!-- Pantalla 4: Llaves finales -->
+    <section id="pantalla-llaves" class="oculto">
+      <h1>Llaves Finales</h1>
+      <div id="llaves-finales"></div>
+      <br>
+      <button onclick="irAPantalla('pantalla-zonas')">Atrás</button>
+      <button onclick="reiniciarTorneo()">Reiniciar Torneo</button>
+    </section>
+
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
